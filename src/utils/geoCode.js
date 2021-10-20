@@ -5,9 +5,9 @@ const geoCode = (address,callback) =>{
 
     request({url,json:true},(error,{body}= {})=>{
         if (error) {
-            callback('Unable to connect',undefined);
+            callback('Unable to connect,Check your Internet connection',undefined);
         }else if(body.features.length === 0){
-            callback('check input location',undefined)
+            callback('Enter A valid Location',undefined)
         }else {
             callback(undefined,{
                 latitude : body.features[0].center[1],

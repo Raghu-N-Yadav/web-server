@@ -5,13 +5,14 @@ const forecast = (latitude, longitude,callback) =>{
     
     request({url,json:true},(error,{body}={})=>{
         if(error) {
-            callback('Unable to connect', undefined);
+            callback('Unable to connect, Check Your Inter Connection', undefined);
 
         }else if (body.error) {
-            callback('Location not found', undefined);
+            callback('Location not found, Enter a Valid Location', undefined);
 
         }else {
-            callback(undefined,' current tempreture is '+ body.current.temperature+ ' Degrees and feels like '+ body.current.feelslike+' Degrees');
+            callback(undefined,'Current tempreture is '+ body.current.temperature+ ' Degrees!! and Feels like '+ body.current.feelslike+' Degrees!!');
+
         }
     })
 }
