@@ -11,7 +11,7 @@ const forecast = (latitude, longitude,callback) =>{
             callback('Location not found, Enter a Valid Location', undefined);
 
         }else {
-            callback(undefined,'Local Time :: '+ body.location.localtime+'.Current tempreture is '+ body.current.temperature+ ' Degrees!! and Feels like '+ body.current.feelslike+' Degrees!!');
+            callback(undefined,'Local Time :: '+ body.location.localtime+'.Current tempreture is '+ body.current.temperature+ ' Degrees!! and Feels like '+ body.current.feelslike+' Degrees!!.\n\tHumidity outside is : '+body.current.humidity);
 
         }
     })
